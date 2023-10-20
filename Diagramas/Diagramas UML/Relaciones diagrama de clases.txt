@@ -1,0 +1,9 @@
+La clase "Régimen Simple de Tributación (RST)" tiene una relación con "Requisito" y "Beneficio" (relación de composición) para mostrar que tiene una lista de requisitos y beneficios asociados.
+Las clases "Persona Natural" y "Persona Jurídica" pueden acceder de forma voluntaria al "Régimen Simple de Tributación (RST)".
+La clase "Persona Natural" y "Persona Jurídica" tienen una relación de exclusión con la clase "Situación de Exclusión" para indicar que no pueden optar por el RST si se encuentran en situaciones específicas.
+La clase "Régimen Simple de Tributación (RST)" tiene una relación con "Impuesto" para mostrar que implica el pago de impuestos.
+La clase "Régimen Simple de Tributación (RST)" tiene una relación con "Sistema Electrónico de la DIAN" para indicar que los anticipos bimestrales se realizan a través de sistemas electrónicos.
+La clase "Régimen Simple de Tributación (RST)" tiene una relación con "Municipio" para mostrar que se pueden presentar impuestos en diferentes municipios.
+La clase "Formalización Empresarial" es un medio de inclusión económica en el "Mercado".
+La clase "Mercado" es un medio de inclusión en la "Economía Formal".
+Este diagrama de clases captura las clases relevantes y sus relaciones en el contexto del Régimen Simple de Tributación, así como las interacciones entre las personas y las entidades involucradas en este sistema tributario.
