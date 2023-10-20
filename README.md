@@ -1,1 +1,1 @@
-# Gesti-n-y-emisi-n-de-documentaci-n-y-facturaci-n-electr-nica-para-el-R-gimen-Simple-de-Tributaci-n
+Management and issuance of documentation and electronic invoicing electronic invoicing for the Simple Taxation Regime in Colombia. in Colombia.
