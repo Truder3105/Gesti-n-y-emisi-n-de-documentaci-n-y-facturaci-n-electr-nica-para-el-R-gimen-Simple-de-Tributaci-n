@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Facturación electrónica</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Facturación electrónica</h1>
+  </header>
+  <main>
+    <section class="formulario">
+      <form id="facturaForm" onsubmit="event.preventDefault(); enviarFactura();">
+        <div class="campo">
+          <label for="cliente">Cliente</label>
+          <input type="text" id="cliente" placeholder="NIT del cliente" required>
+        </div>
+        <div class="campo">
+          <label for="fecha">Fecha</label>
+          <input type="date" id="fecha" required>
+        </div>
+        <div class="campo">
+          <label for="productos">Productos</label>
+          <table>
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th>Subtotal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="text" placeholder="Nombre del producto" required></td>
+                <td><input type="number" placeholder="Cantidad" required></td>
+                <td><input type="number" placeholder="Precio" required></td>
+                <td><input type="number" placeholder="Subtotal" readonly></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="campo">
+          <label for="total">Total</label>
+          <input type="number" id="total" placeholder="Total" readonly>
+        </div>
+        <div class="campo">
+          <label for="email">Correo Electrónico</label>
+          <input type="email" id="email" placeholder="Correo electrónico" required>
+        </div>
+        <div class="campo">
+          <label for="asunto">Asunto</label>
+          <input type="text" id="asunto" placeholder="Asunto" required>
+        </div>
+        <button type="submit">Generar factura</button>
+      </form>
+      <button onclick="enviarFactura()">Enviar factura</button>
+    </section>
+    <script>
+      function calcularSubtotal(row) {
+        const cantidad = row.cells[1].querySelector("input").value;
+        const precio = row.cells[2].querySelector("input").value;
+        const subtotal = cantidad * precio;
+        row.cells[3].querySelector("input").value = subtotal;
+        actualizarTotal();
+      }
+
+      function actualizarTotal() {
+        const subtotalInputs = document.querySelectorAll("table tbody tr td input[placeholder='Subtotal']");
+        let total = 0;
+        subtotalInputs.forEach(input => {
+          total += parseFloat(input.value) || 0;
+        });
+        document.getElementById("total").value = total;
+      }
+
+      function enviarFactura() {
+        // Generar la factura electrónica (debes implementar esta función)
+        var factura = generarFactura();
+      
+        // Enviar la factura electrónica por correo electrónico
+        var email = document.getElementById("email").value;
+        var asunto = document.getElementById("asunto").value;
+        var cuerpo = "La factura electrónica se adjunta.";
+      
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/enviar-factura", true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+      
+        var data = JSON.stringify({
+          factura: factura,
+          email: email,
+          asunto: asunto,
+          cuerpo: cuerpo
+        });
+      
+        xhr.send(data);
+      }
+    </script>
+  </main>
+  <footer>
+    <p>© 2023</p>
+  </footer>
+</body>
+</html>

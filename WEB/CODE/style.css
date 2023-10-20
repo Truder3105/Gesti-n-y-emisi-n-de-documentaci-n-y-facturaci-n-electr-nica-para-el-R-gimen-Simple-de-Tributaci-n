@@ -1,0 +1,63 @@
+body {
+  font-family: Arial, sans-serif; /* Cambio de fuente por defecto */
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #222;
+  color: #fff;
+  padding: 1rem;
+  text-align: center; /* Centrar el contenido del encabezado */
+}
+
+main {
+  max-width: 800px; /* Aumento del ancho máximo para contenido principal */
+  margin: 0 auto;
+  padding: 1rem; /* Espaciado uniforme alrededor del contenido principal */
+}
+
+.formulario {
+  background-color: #f9f9f9; /* Cambio de color de fondo */
+  padding: 2rem;
+  border: 1px solid #ccc; /* Añadido un borde para mayor contraste */
+}
+
+.campo {
+  margin-bottom: 1.5rem; /* Aumento del espaciado entre campos */
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem; /* Espaciado inferior adicional */
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  outline: none;
+  margin-top: 0.25rem; /* Añadido un pequeño espaciado superior */
+}
+
+button {
+  background-color: #222;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem; /* Espaciado superior adicional */
+  transition: background-color 0.3s; /* Agregada transición para el color de fondo */
+}
+
+button:hover {
+  background-color: #111; /* Cambio de color al pasar el cursor */
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #222; /* Fondo del pie de página */
+  color: #fff;
+}
