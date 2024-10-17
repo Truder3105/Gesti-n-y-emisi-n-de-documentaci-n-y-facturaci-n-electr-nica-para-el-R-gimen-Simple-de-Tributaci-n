@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Facturas Electrónicas</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Sistema de Gestión de Facturas Electrónicas</h1>
+        <nav>
+            <ul>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#facturas">Facturas</a></li>
+                <li><a href="#clientes">Clientes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Dashboard -->
+    <section id="dashboard">
+        <h2>Panel de Control</h2>
+        <div class="stats">
+            <div>Total Facturas Emitidas: <span id="total-facturas">0</span></div>
+            <div>Total Clientes: <span id="total-clientes">0</span></div>
+        </div>
+    </section>
+
+    <!-- Gestión de Facturas -->
+    <section id="facturas">
+        <h2>Gestión de Facturas</h2>
+        <form id="factura-form">
+            <label for="cliente">Cliente:</label>
+            <select id="cliente" required>
+                <!-- Llenar con datos dinámicos -->
+                <option value="">Seleccione un cliente</option>
+            </select>
+            
+
+            <label for="producto">Producto/Servicio:</label>
+            <input type="text" id="producto" required>
+
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" min="1" value="1" required>
+
+            <label for="precio">Precio Unitario:</label>
+            <input type="number" id="precio" min="0" required>
+
+            <button type="submit">Generar Factura</button>
+        </form>
+
+        <h3>Facturas Emitidas</h3>
+        <table id="tabla-facturas">
+            <thead>
+                <tr>
+                    <th>Número de Factura</th>
+                    <th>Cliente</th>
+                    <th>Producto</th>
+                    <th>Total</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Llenar con datos dinámicos -->
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Administración de Clientes -->
+    <section id="clientes">
+        <h2>Administración de Clientes</h2>
+        <form id="cliente-form">
+            <label for="nombre-cliente">Nombre del Cliente:</label>
+            <input type="text" id="nombre-cliente" required>
+
+            <label for="nit-cliente">NIT:</label>
+            <input type="text" id="nit-cliente" required>
+
+            <label for="direccion-cliente">Dirección:</label>
+            <input type="text" id="direccion-cliente" required>
+
+            <button type="submit">Agregar Cliente</button>
+        </form>
+
+        <h3>Clientes Registrados</h3>
+        <table id="tabla-clientes">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>NIT</th>
+                    <th>Dirección</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Llenar con datos dinámicos -->
+            </tbody>
+        </table>
+    </section>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
+    
